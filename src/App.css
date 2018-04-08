@@ -1,32 +1,32 @@
+html,
+body,
+#root,
 .App {
-	text-align: center;
+	height: 100%;
 }
 
-.App-logo {
-	animation: App-logo-spin infinite 20s linear;
-	height: 80px;
+.App {
+	display: flex;
+	justify-content: center;
 }
 
-.App-header {
-	background-color: #222;
-	height: 150px;
-	padding: 20px;
-	color: white;
+.Board {
+	width: 200px;
+	height: 400px;
+	margin-bottom: 20px;
+	align-self: flex-end;
+	background-color: lightgrey;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0.493);
 }
 
-.App-title {
-	font-size: 1.5em;
-}
-
-.App-intro {
-	font-size: large;
-}
-
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+.PiecePart {
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	border-collapse: collapse;
+	border-width: 1px;
+	border-style: solid;
+	border-color: white;
 }
