@@ -47,4 +47,28 @@ describe("game", () => {
 		expect(gameStateFilled.next[0]).toBe(PIECE_TYPE_J)
 		expect(gameStateFilled.current.type).toBe(PIECE_TYPE_I)
 	})
+
+	it("correctly places a piece of type I at its initial position", () => {
+		const gameState0 = game()
+
+		let gameState = gameState0
+
+		for (let i = 0; i <= NEXT_PIECES; i++) {
+			gameState = game(gameState, {
+				name: PUSH_NEXT_PIECE,
+				payload: PIECE_TYPE_I,
+			})
+		}
+
+		const { board, current } = gameState
+
+		const leftX = Math.floor(BOARD_WIDTH / 2) - 2
+
+		expect(current.partCoordinates).toEqual([
+			{ x: leftX, y: 1 },
+			{ x: leftX + 1, y: 1 },
+			{ x: leftX + 2, y: 1 },
+			{ x: leftX + 3, y: 1 },
+		])
+	})
 })
