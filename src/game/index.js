@@ -22,7 +22,7 @@ export default (
 
 				return {
 					board,
-					current: first,
+					current: { type: first },
 					next: [...rest, action.payload],
 				}
 

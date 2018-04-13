@@ -45,6 +45,6 @@ describe("game", () => {
 		}
 
 		expect(gameStateFilled.next[0]).toBe(PIECE_TYPE_J)
-		expect(gameStateFilled.current).toBe(PIECE_TYPE_I)
+		expect(gameStateFilled.current.type).toBe(PIECE_TYPE_I)
 	})
 })
