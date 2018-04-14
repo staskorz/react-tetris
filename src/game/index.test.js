@@ -70,5 +70,10 @@ describe("game", () => {
 			{ x: leftX + 2, y: 1 },
 			{ x: leftX + 3, y: 1 },
 		])
+
+		expect(board[1][leftX].uid).toBe(current.uid)
+		expect(board[1][leftX + 1].uid).toBe(current.uid)
+		expect(board[1][leftX + 2].uid).toBe(current.uid)
+		expect(board[1][leftX + 3].uid).toBe(current.uid)
 	})
 })

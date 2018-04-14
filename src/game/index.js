@@ -1,6 +1,7 @@
 import { BOARD_HEIGHT, BOARD_WIDTH, NEXT_PIECES } from "../constants"
 import { PUSH_NEXT_PIECE } from "./actions"
 import calculateInitialPiecePartCoordinates from "./calculate-initial-piece-part-coordinates"
+import placePieceOnBoard from "./place-piece-on-board"
 
 // creates matrix (2d array) of BOARD_HEIGHT x BOARD_WIDTH
 const emptyBoard = Array(BOARD_HEIGHT)
@@ -21,17 +22,20 @@ export default (
 				const { board, next } = state
 				const [first, ...rest] = next
 
-				return {
-					board,
-					current:
-						first === null
-							? null
-							: {
-									type: first,
-									partCoordinates: calculateInitialPiecePartCoordinates(first),
-									uid: Symbol(first),
-							  },
-					next: [...rest, action.payload],
+				if (first) {
+					const currentPiece = {
+						type: first,
+						partCoordinates: calculateInitialPiecePartCoordinates(first),
+						uid: Symbol(first),
+					}
+
+					return {
+						board: placePieceOnBoard(board, currentPiece),
+						current: currentPiece,
+						next: [...rest, action.payload],
+					}
+				} else {
+					return { board, current: null, next: [...rest, action.payload] }
 				}
 
 			default:
