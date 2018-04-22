@@ -16,13 +16,13 @@ Form[0]:                             Form[1]:
  3|  |  |  |                          3|  |##|  |  
 
 
- Coordinates Form[0]:                Coordinates Form[1]:
+Coordinates Form[0]:                Coordinates Form[1]:
 
- [[0, 1], [1, 1], [2, 1], [3, 1]]    [[1, 0], [1, 1], [1, 2], [1, 3]]
+[[0, 1], [1, 1], [2, 1], [3, 1]]    [[1, 0], [1, 1], [1, 2], [1, 3]]
 
 
- Rotation[0]: [[1, -1], [0, 0], [-1, 1], [-2, 2]]
- Rotation[1]: [[-1, 1], [0, 0], [1, -1], [2, -2]] // Backwards, Rotation[0] * (-1)
+Rotation[0]: [[1, -1], [0, 0], [-1, 1], [-2, 2]]
+Rotation[1]: [[-1, 1], [0, 0], [1, -1], [2, -2]] // Backwards, Rotation[0] * (-1)
 ```
 
 ## PIECE_TYPE_J
