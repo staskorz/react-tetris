@@ -26,6 +26,7 @@ export default (
 					const currentPiece = {
 						type: first,
 						partCoordinates: calculateInitialPiecePartCoordinates(first),
+						rotation: 0,
 						uid: Symbol(first),
 					}
 
