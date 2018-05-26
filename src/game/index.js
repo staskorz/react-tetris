@@ -1,5 +1,5 @@
 import { BOARD_HEIGHT, BOARD_WIDTH, NEXT_PIECES } from "../constants"
-import { PUSH_NEXT_PIECE } from "./actions"
+import { PUSH_NEXT_PIECE, ROTATE_CLOCKWISE } from "./actions"
 import calculateInitialPiecePartCoordinates from "./calculate-initial-piece-part-coordinates"
 import placePieceOnBoard from "./place-piece-on-board"
 
@@ -39,6 +39,8 @@ export default (
 					return { board, current: null, next: [...rest, action.payload] }
 				}
 
+			case: ROTATE_CLOCKWISE:
+				
 			default:
 				return state
 		}
